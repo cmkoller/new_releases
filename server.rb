@@ -20,3 +20,10 @@ get '/albums' do
 
   erb :'/albums/index', locals: {albums: albums}
 end
+
+get '/albums/:album_name' do
+  albums = read_albums_from('albums.csv')
+  album_info = albums[params[:album_name]]
+
+  erb :'/albums/show', locals: {album_info: album_info}
+end

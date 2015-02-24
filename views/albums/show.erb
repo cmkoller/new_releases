@@ -1,0 +1,26 @@
+<h1><%= album_info["name"] %></h1>
+
+<h6>Artists:</h6>
+<p>
+  <% artists = eval(album_info["artists"]) %>
+  <%= artists.join(", ") %>
+</p>
+
+<h6>Genres:</h6>
+<p>
+  <ul>
+    <% eval(album_info["genres"]).each do |genre| %>
+      <li><%= genre %></li>
+    <% end %>
+  </ul>
+</p>
+
+<h6>Popularity:</h6>
+<p>
+  <%= album_info["popularity"] %>
+</p>
+
+<h6>URL:</h6>
+<p>
+  <%= album_info["url"] %>
+</p>
